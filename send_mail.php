@@ -24,7 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = 587;
 
         $mail->setFrom(getenv('EMAIL_USERNAME'), 'Website Contact');
+        
+        // Send to yourself
         $mail->addAddress(getenv('EMAIL_USERNAME'));
+
+        // Send confirmation to user
+        $mail->addAddress($email);
 
         $mail->isHTML(true);
         $mail->Subject = 'New Contact Form Submission';
