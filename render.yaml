@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: php-contact-form
+    env: docker
+    plan: free
+    branch: main
+    autoDeploy: true
